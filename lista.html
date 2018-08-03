@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Listas</title>
 </head>
 <body>
+
+    <div id="main">
+
+        <ul>
+
+            <li v-for="item in people" >
+                {{ item }}
+            </li>
+
+        </ul>
+
+        <input type="text" v-model="name" v-on:keyup.enter="addName">
+
+        
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+    
+        new Vue({
+
+            el: '#main',
+            data:{
+                people: ["Ales","Rosy","Mia"]
+            },
+            name: '',
+            methods:{
+                addName: function(){
+                    if(this.name == ''){
+                        alert("Coloca un valor en el input");
+                    }
+                    else{
+                        this.people.push(this.name);
+                        this.name = '';
+                    }
+                }
+            }
+        });
+    
+    </script>
 </body>
 </html>
