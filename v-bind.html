@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listas</title>
+    <title>V-Bind</title>
 </head>
 <body>
 
     <div id="main">
-
+        <h1 v-bind:title="info">Texto de relleno... {{ info }}</h1>
+        <input type="text" v-model="info">
         
     </div>
     
@@ -19,7 +20,10 @@
         new Vue({
 
             el: '#main',
-            
+            data:{
+                info:''
+            }
+
         });
     
     </script>
